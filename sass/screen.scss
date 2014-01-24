@@ -1,0 +1,95 @@
+@import "library";
+@import "reset";
+
+@import "compass/css3";
+
+$bgcolor: lighten(darkred, 5%);
+$timing: 400ms;
+
+// Global templates
+
+%group:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+body {
+	@include transition(all $timing ease-in-out);
+	background: $bgcolor;
+	font-family: 'Gochi Hand', cursive;
+}
+
+.quiz-container {
+	@include transition(all $timing ease-in-out);
+	background-color: $bgcolor;
+	position: relative;
+	top: 100px;
+	margin: 0 auto;
+	height: 480px;
+	padding: 5px;
+}
+
+.question {
+	position: relative;
+	font-weight: bold;
+	font-size: 24pt;
+	text-align: center;
+	top: 50px;
+}
+
+.answers {
+	position: relative;
+	top: 25%;
+	margin: 0 auto;
+	text-align: center;
+	max-width: 320px;
+
+	a {	
+		@include transition(all $timing ease-in-out);
+		text-decoration: none;
+		color: black;
+
+		li {
+			margin: 5px;
+			background: white;
+			border: 1px solid black;
+			border-radius: 5px;
+			height: 50px;
+			font-size: 12pt;
+			padding-top: 15px;
+			@include transition(all $timing ease);
+		}
+
+		&:hover li {
+			background: $bgcolor;
+			border: 1px solid $bgcolor;
+			color: $bgcolor;
+		}
+
+		&:hover ~ button {
+			opacity: 1;
+		}
+
+		&:visited {
+			background: gray;
+		}
+	}
+}
+
+button {
+	position: relative;
+	font-family: 'Gochi Hand', cursive;
+	margin-top: 20px;
+	@include transition(all $timing ease-in-out);
+	height: 30px;
+	width: 60px;
+	background: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	opacity: 0;
+
+	&:hover {
+		background: lighten(gray, 30%);
+	}
+}
