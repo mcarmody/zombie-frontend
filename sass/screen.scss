@@ -38,12 +38,59 @@ body {
 	top: 50px;
 }
 
+.results {
+	position: relative;
+	margin: 0 auto;
+	width: 320px;
+	top: 100px;
+	text-align: center;
+}
+
+.name-text {
+	position: relative;
+	margin: 0 auto;
+	width: 320px;
+	top: 100px;
+	text-align: center;
+}
+
+div button {
+	position: relative;
+	margin: 0 auto;
+	background: white;
+	opacity: 1;
+	width: 20%;
+	top: 200px;
+	left: 40%;
+
+	&:hover {
+		background: darken(darkgray, 30%);
+		color: white;
+	}
+}
+
+.name-form {
+	position: relative;
+	background:$bgcolor;
+	border: none;
+	border-bottom: 1px solid black;
+	margin: 0 auto;
+	text-align: center;
+	width: 20%;
+	left: 20%;
+	top: 110px;
+	height: 28px;
+	font-size: 18pt;
+	font-family: 'Gochi Hand', cursive;
+}
+
 .answers {
 	position: relative;
 	top: 25%;
 	margin: 0 auto;
 	text-align: center;
 	max-width: 320px;
+	@include transition(all $timing/2 ease);
 
 	a {	
 		@include transition(all $timing ease-in-out);
